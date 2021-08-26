@@ -1,5 +1,6 @@
 import { convertToNumber, setOutputHtml } from "./html";
 import { add } from "./math";
+import "./index.css";
 
 console.log("This my app!");
 
@@ -14,5 +15,5 @@ form.addEventListener("submit", (evt) => {
   const numA = convertToNumber(a);
   const numB = convertToNumber(b);
   const result = add(numA, numB);
-  setOutputHtml(output, result);
+  setOutputHtml(output, { numA, numB, result });
 });
