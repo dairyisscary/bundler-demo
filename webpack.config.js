@@ -7,6 +7,12 @@ module.exports = {
   mode: isProduction ? "production" : "development",
   devtool: isProduction ? "source-map" : false,
 
+  module: {
+    rules: [
+      { test: /\.css$/, use: ["style-loader", "css-loader", "postcss-loader"] },
+    ],
+  },
+
   entry: "./src/index.js",
   output: {
     filename: "bundle.js",
